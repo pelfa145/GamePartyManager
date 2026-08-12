@@ -6,12 +6,13 @@ public class Player {
     private int health;
     private int level;
 
-    Player(String username) {
-        this.id = gp.generateID();
+    Player(int id, String username) {
+        this.id = id;
         this.health = 100;
         this.level = 1;
         this.username = username;
     }
+
 
 
     void takeDamage(int amount){
@@ -38,8 +39,6 @@ public class Player {
     //setters
     void setUsername(String newUser){
     }
-    //dirty inits
-    GameParty gp = new GameParty();
 
 
 }

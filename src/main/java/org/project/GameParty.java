@@ -8,7 +8,7 @@ public class GameParty {
     ArrayList<Player> players = new ArrayList<>();
     static InputHandler input = new InputHandler();
     public void addPlayer(String username){
-        players.add(new Player(username));
+        players.add(new Player(generateID(),username));
         System.out.println("Added "+username+".");
     }
 
@@ -23,11 +23,13 @@ public class GameParty {
         int idIndex = findPlayer();
         if(idIndex == -1){
             System.out.println("No player with "+idIndex+" was found.");
+            return;
         }
         try{players.remove(idIndex);}catch (Exception e){
             System.out.println("Something went wrong try again.");
         }
     }
+
 
     private int findPlayer(){
         System.out.print("Enter player ID: ");
@@ -42,7 +44,7 @@ public class GameParty {
     public void showParty(){
         System.out.println("ID|Name|Health|Level");
         for(Player p : players){
-            System.out.println(p.getId()+"|"+p.getUsername()+"|"+p.getHealth()+"|"+p.getHealth()+"|"+p.getLevel());
+            System.out.println(p.getId()+"|"+p.getUsername()+"|"+p.getHealth()+"|"+p.getLevel());
         }
     }
     //damage player.
