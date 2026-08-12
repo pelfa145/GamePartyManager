@@ -58,7 +58,7 @@ public class GameParty {
         int damageTaken = random.nextInt(1,41);
         selectedPlayer.takeDamage(damageTaken);
     }
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public void healPlayer(){
         int current = findPlayer();

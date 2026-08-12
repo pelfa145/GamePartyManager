@@ -13,24 +13,6 @@ public class Player {
         this.username = username;
     }
 
-
-
-    void takeDamage(int amount){
-        this.health -= amount;
-        System.out.println(this.username+" took "+amount+" Damage! Remaining HP: "+this.health);
-    }
-    void heal(int amount){
-        this.health += amount;
-        System.out.println(this.username+" has healed +"+amount+"HP.");
-    }
-    void levelUp(){
-        this.level ++;
-        System.out.println(this.username+" has leveled up!");
-    }
-    void displayStats(){
-        System.out.println(this.username+"\nHP: "+this.health+"\nLevel: "+this.level);
-    }
-
     //getters
     int getId(){return id;}
     int getHealth(){return health;}
