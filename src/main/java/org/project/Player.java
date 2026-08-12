@@ -22,8 +22,13 @@ public class Player {
         this.health += amount;
         System.out.println(this.username+" has healed +"+amount+"HP.");
     }
-    void levelUp(){}
-    void displayStats(){}
+    void levelUp(){
+        this.level ++;
+        System.out.println(this.username+" has leveled up!");
+    }
+    void displayStats(){
+        System.out.println(this.username+"\nHP: "+this.health+"\nLevel: "+this.level);
+    }
 
     //getters
     int getId(){return id;}

@@ -68,4 +68,22 @@ public class GameParty {
         int healed = random.nextInt(1,41);
         selectedPlayer.heal(healed);
     }
+    public void levelUpPlayer(){
+        int current = findPlayer();
+        if(current == -1){
+            System.out.println(current+" can't be found.");
+            return;
+        }
+        Player selectedPlayer = players.get(current);
+        selectedPlayer.levelUp();
+    }
+    public void displayStatsOfPlayer(){
+        int current = findPlayer();
+        if(current == -1){
+            System.out.println(current+" can't be found.");
+            return;
+        }
+        Player selectedPlayer = players.get(current);
+        selectedPlayer.displayStats();
+    }
 }

@@ -14,4 +14,5 @@ public class InputHandler {
     public void close(){
         input.close();
     }
+
 }
