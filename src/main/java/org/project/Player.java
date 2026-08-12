@@ -14,8 +14,14 @@ public class Player {
     }
 
 
-    void takeDamage(int amount){}
-    void heal(int amount){}
+    void takeDamage(int amount){
+        this.health -= amount;
+        System.out.println(this.username+" took "+amount+" Damage! Remaining HP: "+this.health);
+    }
+    void heal(int amount){
+        this.health += amount;
+        System.out.println(this.username+" has healed +"+amount+"HP.");
+    }
     void levelUp(){}
     void displayStats(){}
 

@@ -2,6 +2,8 @@ package org.project;
 import org.project.misc.InputHandler;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 public class GameParty {
     ArrayList<Player> players = new ArrayList<>();
     static InputHandler input = new InputHandler();
@@ -36,11 +38,34 @@ public class GameParty {
         }
         return -1;
     }
-    //finish show party
+
     public void showParty(){
         System.out.println("ID|Name|Health|Level");
         for(Player p : players){
-            System.out.println("");
+            System.out.println(p.getId()+"|"+p.getUsername()+"|"+p.getHealth()+"|"+p.getHealth()+"|"+p.getLevel());
         }
+    }
+    //damage player.
+    public void damagePlayer(){
+        int current = findPlayer();
+        if(current == -1){
+            System.out.println(current+" can't be found.");
+            return;
+        }
+        Player selectedPlayer = players.get(current);
+        int damageTaken = random.nextInt(1,41);
+        selectedPlayer.takeDamage(damageTaken);
+    }
+    private Random random = new Random();
+
+    public void healPlayer(){
+        int current = findPlayer();
+        if(current == -1){
+            System.out.println(current+" can't be found.");
+            return;
+        }
+        Player selectedPlayer = players.get(current);
+        int healed = random.nextInt(1,41);
+        selectedPlayer.heal(healed);
     }
 }
